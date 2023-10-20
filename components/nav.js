@@ -12,7 +12,7 @@ const links = [
 export default function Nav() {
     const {theme, setTheme} = useTheme()
     useEffect(() => {
-        console.log('Made by Sarthak Mohanty. All Rights Reserved. Want to hire me? https://srtk.me')
+        console.log('') // Put some comment here
     })
     return (
         <nav className="dark:text-white">

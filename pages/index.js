@@ -1,5 +1,6 @@
 import HeadObject from '../components/head'
 import Nav from '../components/nav';
+import Footer from '../components/footer'
 
 export default function Home() {
   return (
@@ -8,7 +9,10 @@ export default function Home() {
         {/* You can put extra tags in here, or leave it blank */}
       </HeadObject>
       <Nav />
+
       The perfect Next.js Theme. Contains everything. Check README for more information.
+        <Footer/>
+
     </div>
   )
 }

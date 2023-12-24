@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { CgDarkMode } from 'react-icons/cg'
 import {useTheme} from 'next-themes'
 
+//Added a none breaking space about us bc it was being funky
 const links = [
     { label: "Dashboard", href: "/" },
     { label: "Schedule", href: "/" },
@@ -18,42 +19,35 @@ export default function Nav() {
     const {theme, setTheme} = useTheme();
     const [isOpen,setIsOpen] = useState(false);
     
-
+    // Just for testing purposes
     useEffect(() => {
         console.log("Theme is:",theme) // Put some comment here
     },[theme]);
 
-    
     const toggleIsOpen = ()=>{
         setIsOpen(!isOpen);
+        document.querySelector("#nav_dropdown").classList.toggle("rotate-90");
     }
-    
-    
     
     return (
         // We want to conditionally render a dropdown depending on if the size is small enough 
         // items-center justify-center
         <nav className="dark:text-white">
-            <ul className="flex p-6 mt-0 sm:p-4 sm:justify-between sm:items-center">
-                <div className='flex justify-center items-center pr-2'>
-                    {
-                        isOpen ?
-                        <button>
-                        <img 
-                        src={theme === 'light' ? '/assets/close_dark.png':'/assets/close_light.png'}
-                        className='h-4 w-4 pr-[3px] md:hidden'
-                        onClick={toggleIsOpen}/>
-                        </button> 
-                        :
-                        <button>
+            <ul className="flex p-4 mt-0 justify-center items-center">
+                <div className='flex'>
+                    <button className='pr-3 md:hidden transform duration-300'>
                         <img 
                         src='/assets/dropdown.png'
-                        className=' h-7 w-7 md:hidden'
-                        onClick={toggleIsOpen}/>
-                        </button> 
-                    }
-                    <img src="/assets/RH_logo.png" className="h-[2.5rem] w-[2.5rem] max-w-[5rem] max-h-[5rem]"/>
-                    <h1 className='text-2xl'>RowdyHacks</h1>
+                        className=' h-7 w-7'
+                        onClick={toggleIsOpen}
+                        id='nav_dropdown'
+                        />
+                    </button> 
+                    
+                </div>
+                <div className='flex justify-center w-full sm:w-auto sm:pl-0 sm:mr-auto'>
+                        <img src="/assets/RH_logo.png" className="h-[2.5rem] w-[2.5rem] max-w-[5rem] max-h-[5rem]"/>
+                        <h1 className='text-2xl'>RowdyHacks</h1>
                 </div>
                 <ul className={`mx-auto sm:mx-0 flex flex-row space-x-4`}>
                     <div className='hidden md:flex'>
@@ -68,7 +62,7 @@ export default function Nav() {
                     ))}
                     </div>
                 </ul>
-                <li>
+                <li className='ml-auto'>
                     <button
                         onClick={() => {
                             setTheme(theme === 'dark' ? 'light' : 'dark');

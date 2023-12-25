@@ -32,13 +32,14 @@ export default function Nav() {
     return (
         // We want to conditionally render a dropdown depending on if the size is small enough 
         // items-center justify-center
-        <nav className="dark:text-white">
+        
+        <nav className="fixed w-full bg-black bg-opacity-30 dark:bg-opacity-50">
             <ul className="flex p-4 mt-0 justify-center items-center">
                 <div className='flex'>
-                    <button className='pr-3 md:hidden transform duration-300'>
+                    <button className='pr-3 md:hidden '>
                         <img 
                         src='/assets/dropdown.png'
-                        className=' h-7 w-7'
+                        className=' h-7 w-7 transform transition-transform duration-200 ease-in-out'
                         onClick={toggleIsOpen}
                         id='nav_dropdown'
                         />

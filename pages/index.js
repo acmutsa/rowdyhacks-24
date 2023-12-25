@@ -8,13 +8,20 @@ export default function Home() {
 
     // Added the 100vh to this in order to get access to the full screen
     // background for dark theme reccomended by Eliza so blame her if you don't like it
-    <div className="dark:bg-[#310f3a]  dark:text-white h-[100vh]">
+    <div className=" text-white h-[100vh]">
       <HeadObject>
         {/* You can put extra tags in here, or leave it blank */}
       </HeadObject>
       <Nav/>
-
       <Hero/>
+      <div className='pt-75'>
+        <img src='/assets/RH_logo.png'></img>
+        <img src='/assets/RH_logo.png'></img>
+        <img src='/assets/RH_logo.png'></img>
+        <img src='/assets/RH_logo.png'></img>
+        <img src='/assets/RH_logo.png'></img>
+
+      </div>
     </div>
   );
 }

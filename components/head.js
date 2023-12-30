@@ -1,7 +1,7 @@
 import Head from 'next/head'
 
 export default function HeadObject({children}) {
-    const title = "The Perfect Next.js Theme";
+    const title = "RowdyHacks";
     const description = "This is the perfect Next.js theme that you should use instead of create-next-app.";
     const searchBarColor = "#ffffff"; // This is your Safari 15 Search Bar Color in Light Mode
     //const darkSearchBarColor = "#000000"; // This is your Safari 15 Search Bar Color in Dark Mode (optional)
@@ -15,6 +15,7 @@ export default function HeadObject({children}) {
             <meta charSet="utf-8" />
             <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
             <meta name="viewport" content="width=device-width,initial-scale=1" />
+            <link rel="icon" href="/assets/RH_24_icon.png" sizes="any" />
             <title>{title}</title>
             <meta name="description" content={description} />
             <meta name="keywords" content={keywords} />

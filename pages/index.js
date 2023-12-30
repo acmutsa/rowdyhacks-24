@@ -14,14 +14,6 @@ export default function Home() {
       </HeadObject>
       <Nav/>
       <Hero/>
-      <div className='pt-75'>
-        <img src='/assets/RH_logo.png'></img>
-        <img src='/assets/RH_logo.png'></img>
-        <img src='/assets/RH_logo.png'></img>
-        <img src='/assets/RH_logo.png'></img>
-        <img src='/assets/RH_logo.png'></img>
-
-      </div>
     </div>
   );
 }
